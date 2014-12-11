@@ -29,8 +29,10 @@ exercise.addSetup(function (mode, callback) {
     //take args and send to the process
     for (i = 0; i < process.argv.length; i++) {
       if (process.argv[i] == 'run') {
-        var arg_end = i + 1;
-      } else if (i > arg_end) {
+        //next argument is the runfile
+        var runfile = i + 1;
+      } else if (i > runfile) {
+        //pass through args after the runfile
         args.push(process.argv[i])
       }
     }
