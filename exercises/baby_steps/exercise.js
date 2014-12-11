@@ -49,6 +49,7 @@ exercise.addSetup(function (mode, callback) {
   // supply the args to the 'execute' processor for both
   // solution and submission spawn()
   this.submissionArgs = this.solutionArgs = args
+  
   process.nextTick(callback)
 })
 
