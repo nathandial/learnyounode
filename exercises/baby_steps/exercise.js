@@ -29,7 +29,7 @@ exercise.addSetup(function (mode, callback) {
 
   while (Math.random() > 0.3)
     args.push(rndint())
-  
+
   // supply the args to the 'execute' processor for both
   // solution and submission spawn()
   this.submissionArgs = this.solutionArgs = args
