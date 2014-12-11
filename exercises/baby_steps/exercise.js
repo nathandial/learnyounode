@@ -24,28 +24,12 @@ function rndint () {
 exercise.addSetup(function (mode, callback) {
   // mode == 'run' || 'verify'
 
-  var args = []
-  if (mode == 'run') {
-    //take args and send to the process
-    for (i = 0; i < process.argv.length; i++) {
-      if (process.argv[i] == 'run') {
-        //next argument is the runfile
-        var runfile = i + 1;
-      } else if (i > runfile) {
-        //pass through args after the runfile
-        args.push(process.argv[i])
-      }
-    }
-  }
-  if (mode == 'verify') {
+  // create a random batch of cmdline args
+  var args = [ rndint(), rndint() ]
 
-    // create a random batch of cmdline args
-    args = [ rndint(), rndint() ]
-
-    while (Math.random() > 0.3)
-      args.push(rndint())
-  }
-
+  while (Math.random() > 0.3)
+    args.push(rndint())
+  
   // supply the args to the 'execute' processor for both
   // solution and submission spawn()
   this.submissionArgs = this.solutionArgs = args
